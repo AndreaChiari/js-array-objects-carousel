@@ -37,10 +37,11 @@ const next = document.getElementById('next')
 const gallery = document.getElementById('container')
 
 // creo una funzione che mi permette di creare elementi in pagina
-const getElements = () => {w
+const getElements = () => {
   for(i=0; i < data.length; i++ ){
     let card = data[i];
+    
 
-    daadw
+    
   }
 }
