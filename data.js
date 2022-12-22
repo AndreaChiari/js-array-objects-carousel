@@ -46,17 +46,18 @@ let cardText = gallery.appendChild(text)
 
 
 // creo una funzione che mi permette di creare elementi in pagina
-let pic = ''
-gallery.append(pic)
 
+let pic = ''
 const getElements = () => {
   for(let i=0; i < data.length; i++ ){
-  const cards = data[i];
-  cardTitle.innerText = cards.title;
-  cardText.innerText = cards.text
-  pic += `<img src = "${cards.image}" alt= "${cards.image}" > </img>`  
+    const cards = data[i];
+    cardTitle.innerText += cards.title;
+    cardText.innerText += cards.text;
+    pic += `<img src ="${cards.image}" alt ="${cards.image}"> </img>`;  
   }
-
+  gallery.append(pic)
+  console.log(pic)
+  
 }
 
 getElements()
