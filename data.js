@@ -31,16 +31,25 @@ const data = [
 */
 
 // prendo gli elememnti dal DOM
-
 const back = document.getElementById('back')
 const next = document.getElementById('next')
 const gallery = document.getElementById('container')
 
+//creo gli elementi che mi serviranno
+let title = document.createElement('h1')
+let text = document.createElement('p')
+let pic = document.createElement('img')
+let cardTitle = gallery.appendChild(title)
+let cardPic = gallery.appendChild(pic)
+let cardText = gallery.appendChild(text)
+
+
 // creo una funzione che mi permette di creare elementi in pagina
 const getElements = () => {
-  for(i=0; i < data.length; i++ ){
-    let card = data[i];
-    
+  for(let i=0; i < data.length; i++ ){
+   const cards = data[i];
+   console.log(data.image, data.title, data.text);
+
 
     
   }
