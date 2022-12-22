@@ -51,8 +51,9 @@ const getElements = () => {
   const cards = data[i];
   cardTitle.innerText = cards.title;
   cardText.innerText = cards.text
-  img += `<img url = ${cards.pic} alt=${cards.pic} > </img>`  
+  img += `<img src = "${cards.image}" alt= "${cards.image}" > </img>`  
   }
+
 }
 
 getElements()
