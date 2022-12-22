@@ -38,20 +38,23 @@ const gallery = document.getElementById('container')
 //creo gli elementi che mi serviranno
 let title = document.createElement('h1')
 let text = document.createElement('p')
-let pic = document.createElement('img')
 let cardTitle = gallery.appendChild(title)
-let cardPic = gallery.appendChild(pic)
 let cardText = gallery.appendChild(text)
 
 
+
+
+
 // creo una funzione che mi permette di creare elementi in pagina
-let img = ''
+let pic = ''
+gallery.append(pic)
+
 const getElements = () => {
   for(let i=0; i < data.length; i++ ){
   const cards = data[i];
   cardTitle.innerText = cards.title;
   cardText.innerText = cards.text
-  img += `<img src = "${cards.image}" alt= "${cards.image}" > </img>`  
+  pic += `<img src = "${cards.image}" alt= "${cards.image}" > </img>`  
   }
 
 }
