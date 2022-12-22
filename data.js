@@ -48,9 +48,9 @@ let cardText = gallery.appendChild(text)
 const getElements = () => {
   for(let i=0; i < data.length; i++ ){
    const cards = data[i];
-   console.log(data.image, data.title, data.text);
+   console.log(cards);
+  }
+}
 
 
     
-  }
-}
