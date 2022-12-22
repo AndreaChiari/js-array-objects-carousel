@@ -35,32 +35,29 @@ const back = document.getElementById('back')
 const next = document.getElementById('next')
 const gallery = document.getElementById('container')
 
-//creo gli elementi che mi serviranno
-let title = document.createElement('h1')
-let text = document.createElement('p')
-let cardTitle = gallery.appendChild(title)
-let cardText = gallery.appendChild(text)
 
 
+// creo una funzione che mi permetta di creare elementi in pagina
 
-
-
-// creo una funzione che mi permette di creare elementi in pagina
-
-let pic = ''
-const getElements = () => {
+const createElements = () => {
+  let card = ''
   for(let i=0; i < data.length; i++ ){
     const cards = data[i];
-    cardTitle.innerText += cards.title;
-    cardText.innerText += cards.text;
-    pic += `<img src ="${cards.image}" alt ="${cards.image}"> </img>`;  
+    card += `
+      <h1>${cards.title}</h1>
+      <p>${cards.text}</p>
+      <img src="${cards.image}" alt="${cards.title}" />
+      `;
   }
-  gallery.append(pic)
-  console.log(pic)
+
+  gallery.append(card)
+  console.log(card)
+  return card
   
 }
 
-getElements()
+createElements()
+    
 
 
     
