@@ -12,6 +12,7 @@ img{
     max-height: 100%;
     position: absolute;
     left: 25%;
+    object-fit: cover;
   
 }
 

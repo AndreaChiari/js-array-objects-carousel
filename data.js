@@ -44,13 +44,17 @@ const createElements = () => {
   for(let i=0; i < data.length; i++ ){
     const cards = data[i];
     card += `
-      <h1>${cards.title}</h1>
-      <p>${cards.text}</p>
-      <img src="${cards.image}" alt="${cards.title}" />
+      <figure>
+      <img src="${cards.image}" alt="${cards.title}" />    
+        <figcaption>
+          <h1>${cards.title}</h1>
+          <p>${cards.text}</p>
+        <figcaption>
+      </figure>
       `;
   }
 
-  gallery.append(card)
+  gallery.innerHTML = card
   console.log(card)
   return card
   
