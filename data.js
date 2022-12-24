@@ -44,8 +44,8 @@ const createElements = () => {
   for(let i=0; i < data.length; i++ ){
     const cards = data[i];
     card += `
-      <figure>
-      <img src="${cards.image}" alt="${cards.title}" />    
+      <figure class=figure>
+        <img class=img src="${cards.image}" alt="${cards.title}" />    
         <figcaption>
           <h1>${cards.title}</h1>
           <p>${cards.text}</p>
@@ -55,13 +55,56 @@ const createElements = () => {
   }
 
   gallery.innerHTML = card
-  console.log(card)
   return card
   
 }
 
 createElements()
-    
 
 
-    
+//recupero le immagini
+const allImg = document.querySelectorAll('figure')
+console.log(allImg); 
+
+
+//metto la prima immagine come attiva
+let activeIndex = 0
+allImg[activeIndex].classList.add('active')
+
+
+
+//aggiungo un evento al bottone che vada ad incrementare l'indice delle immagini
+next.addEventListener('click', function() {
+
+  //rimuovo l'indice
+  allImg[activeIndex].classList.remove('active');
+
+  //aumento l'indice
+  activeIndex++;
+  allImg[activeIndex].classList.add('active');
+  
+  //se arrivo alla fine riparto da capo
+  if(activeIndex === allImg.length){
+    activeIndex = 0;
+
+  }
+
+})
+
+//aggiungo un evento al bottone che vada decrementare l'indice delle immagini
+back.addEventListener('click', function() {
+
+  //rimuovo l'indice
+  allImg[activeIndex].classList.remove('active');
+  
+  //decremento l'indice
+  activeIndex--;
+  allImg[activeIndex].classList.add('active');
+
+  //se arrivo all'inizio riparto dalla fine
+  if(activeIndex < 0){
+    activeIndex = allImg.length -1;
+
+  }
+
+})
