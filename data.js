@@ -48,7 +48,7 @@ const createElements = () => {
         <img class=img src="${cards.image}" alt="${cards.title}" />    
         <figcaption>
           <h1>${cards.title}</h1>
-          <p>${cards.text}</p>
+          <h3>${cards.text}</h3>
         <figcaption>
       </figure>
       `;
@@ -68,7 +68,7 @@ console.log(allImg);
 
 
 //metto la prima immagine come attiva
-let activeIndex = 0
+let activeIndex = 0;
 allImg[activeIndex].classList.add('active')
 
 
@@ -81,13 +81,12 @@ next.addEventListener('click', function() {
 
   //aumento l'indice
   activeIndex++;
-  allImg[activeIndex].classList.add('active');
   
   //se arrivo alla fine riparto da capo
-  if(activeIndex === allImg.length){
-    activeIndex = 0;
-
-  }
+  if(activeIndex === allImg.length) activeIndex = 0;
+  
+  allImg[activeIndex].classList.add('active');
+  
 
 })
 
@@ -99,12 +98,11 @@ back.addEventListener('click', function() {
   
   //decremento l'indice
   activeIndex--;
-  allImg[activeIndex].classList.add('active');
-
+  
   //se arrivo all'inizio riparto dalla fine
-  if(activeIndex < 0){
-    activeIndex = allImg.length -1;
-
-  }
+  if(activeIndex < 0) activeIndex = allImg.length -1;
+  
+  allImg[activeIndex].classList.add('active');
+  
 
 })
